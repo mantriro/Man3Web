@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    @model List<Category>
+    <h1>Test Bro</h1>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>
+                CategoryID
+            </th>
+            <th>
+                Display Order
+            </th>
+            <th>
+                Name
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach(var obj in Model)
+            {
+             <tr>
+                 <td>
+                     @obj.CategoryId
+                 </td>
+                 <td>
+                     @obj.DisplayOrder
+                 </td>
+                 <td>
+                     @obj.Name
+                 </td>
+             </tr>               
+}
+        </tbody>
+    </table>
+</body>
+</html>
