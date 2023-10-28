@@ -32,7 +32,7 @@ namespace Man3Web.Controllers
             if (obj.Name == obj.DisplayOrder.ToString()) {
                 ModelState.AddModelError("name", "Display Order cannot exactly match Name");
             }
-            if (obj.Name == "test" || obj.Name != null)
+            if (obj.Name.ToLower() == "test" || obj.Name == null)
             {
                 ModelState.AddModelError("", "test is an invalid value");
             }
@@ -40,6 +40,7 @@ namespace Man3Web.Controllers
             {
                 _db.Categories.Add(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Category created successfully";
                 return RedirectToAction("Index", "Category");
             }
             return View();
@@ -70,6 +71,8 @@ namespace Man3Web.Controllers
             {
                 _db.Categories.Update(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Category updated successfully";
+
                 return RedirectToAction("Index", "Category");
             }
             return View();
@@ -104,7 +107,9 @@ namespace Man3Web.Controllers
             
                 _db.Categories.Remove(ob);
                 _db.SaveChanges();
-                return RedirectToAction("Index", "Category");
+            TempData["success"] = "Category deleted successfully";
+
+            return RedirectToAction("Index", "Category");
         }
     }
 }
