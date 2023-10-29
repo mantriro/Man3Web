@@ -5,7 +5,13 @@ VisualStudioVersion = 17.8.34112.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Man3Web", "Man3Web\Man3Web.csproj", "{767F98E0-0158-4DD9-BF00-7DB1C20E49D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Man3WebRazor_Temp", "Man3WebRazor_Temp\Man3WebRazor_Temp.csproj", "{52372D8E-6B0B-4B68-9F39-0A94CCFF7E44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Man3WebRazor_Temp", "Man3WebRazor_Temp\Man3WebRazor_Temp.csproj", "{52372D8E-6B0B-4B68-9F39-0A94CCFF7E44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Man3Web.DataAccess", "Man3Web.DataAccess\Man3Web.DataAccess.csproj", "{9B09F8A5-7C24-48D9-A002-2F4A7AB89E37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Man3Web.Models", "Man3Web.Models\Man3Web.Models.csproj", "{902AC681-9A70-4996-BC3A-50ECEF249AB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Man3Web.Utility", "Man3Web.Utility\Man3Web.Utility.csproj", "{BBC1DCA2-0FF3-4D74-9CDD-5C1E1103FB07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{52372D8E-6B0B-4B68-9F39-0A94CCFF7E44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52372D8E-6B0B-4B68-9F39-0A94CCFF7E44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52372D8E-6B0B-4B68-9F39-0A94CCFF7E44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B09F8A5-7C24-48D9-A002-2F4A7AB89E37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B09F8A5-7C24-48D9-A002-2F4A7AB89E37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B09F8A5-7C24-48D9-A002-2F4A7AB89E37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B09F8A5-7C24-48D9-A002-2F4A7AB89E37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{902AC681-9A70-4996-BC3A-50ECEF249AB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{902AC681-9A70-4996-BC3A-50ECEF249AB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{902AC681-9A70-4996-BC3A-50ECEF249AB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{902AC681-9A70-4996-BC3A-50ECEF249AB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBC1DCA2-0FF3-4D74-9CDD-5C1E1103FB07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBC1DCA2-0FF3-4D74-9CDD-5C1E1103FB07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBC1DCA2-0FF3-4D74-9CDD-5C1E1103FB07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBC1DCA2-0FF3-4D74-9CDD-5C1E1103FB07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

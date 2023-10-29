@@ -8,7 +8,7 @@ namespace Man3WebRazor_Temp.Models
         [Key]
         public int CategoryId { get; set; }
         [Required]
-        [DisplayName("Catgory Name")]
+        [DisplayName("Category Name")]
         [MaxLength(30, ErrorMessage = "Name cant be empty or longer than 30 char")]
         public string Name { get; set; }
 
