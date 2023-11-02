@@ -1,7 +1,7 @@
 ﻿using Man3Web.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Man3Web.Data
+namespace Man3Web.DataAccess.Data
 {
     public class ApplicationDbContext : DbContext
     {

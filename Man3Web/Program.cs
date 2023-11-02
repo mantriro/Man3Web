@@ -1,4 +1,4 @@
-using Man3Web.Data;
+using Man3Web.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

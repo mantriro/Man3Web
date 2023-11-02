@@ -1,4 +1,4 @@
-﻿using Man3Web.Data;
+﻿using Man3Web.DataAccess.Data;
 using Man3Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
