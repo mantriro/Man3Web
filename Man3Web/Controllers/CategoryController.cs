@@ -1,4 +1,5 @@
 ﻿using Man3Web.DataAccess.Data;
+using Man3Web.DataAccess.Repository.IRepository;
 using Man3Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -8,18 +9,16 @@ namespace Man3Web.Controllers
     public class CategoryController : Controller
     {
 
-        private readonly ApplicationDbContext _db;
+        private readonly ICategoryRepository _categoryRepo;
 
-        public CategoryController(ApplicationDbContext db)
+        public CategoryController(ICategoryRepository db)
         {
-            _db = db;
-
+            _categoryRepo = db;
         }
 
         public IActionResult Index()
         {
-
-            List<Category> objCatList= _db.Categories.ToList();    
+            List<Category> objCatList = _categoryRepo.GetAll().ToList();    
             return View(objCatList);
         }
 
@@ -38,8 +37,8 @@ namespace Man3Web.Controllers
             }
             if (ModelState.IsValid)
             {
-                _db.Categories.Add(obj);
-                _db.SaveChanges();
+                _categoryRepo.Add(obj);
+                _categoryRepo.Save();
                 TempData["success"] = "Category created successfully";
                 return RedirectToAction("Index", "Category");
             }
@@ -51,7 +50,7 @@ namespace Man3Web.Controllers
             if (categoryId == null || categoryId == 0) {
                 return NotFound();
             }
-            Category categoryFromDb = _db.Categories.Find(categoryId);//find only works on primary key
+            Category? categoryFromDb = _categoryRepo.Get(u=>u.CategoryId==categoryId);//find only works on primary key
             //Category categoryFromDb1 = _db.Categories.FirstOrDefault(u=>u.CategoryId==id);
             //Category categoryFromDb2 = _db.Categories.Where(u=>u.CategoryId==id).FirstOrDefault();
 
@@ -69,8 +68,8 @@ namespace Man3Web.Controllers
            
             if (ModelState.IsValid)
             {
-                _db.Categories.Update(obj);
-                _db.SaveChanges();
+                _categoryRepo.Update(obj);
+                _categoryRepo.Save();
                 TempData["success"] = "Category updated successfully";
 
                 return RedirectToAction("Index", "Category");
@@ -84,7 +83,7 @@ namespace Man3Web.Controllers
             {
                 return NotFound();
             }
-            Category categoryFromDb = _db.Categories.Find(categoryId);//find only works on primary key
+            Category categoryFromDb = _categoryRepo.Get(u=>u.CategoryId==categoryId);//find only works on primary key
             //Category categoryFromDb1 = _db.Categories.FirstOrDefault(u=>u.CategoryId==id);
             //Category categoryFromDb2 = _db.Categories.Where(u=>u.CategoryId==id).FirstOrDefault();
 
@@ -100,13 +99,13 @@ namespace Man3Web.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? categoryId)
         {
-            Category ob = _db.Categories.Find(categoryId);
+            Category ob = _categoryRepo.Get(u => u.CategoryId == categoryId);
             if (ob == null) {
                 return NotFound();
             }
             
-                _db.Categories.Remove(ob);
-                _db.SaveChanges();
+                _categoryRepo.Remove(ob);
+                _categoryRepo.Save();
             TempData["success"] = "Category deleted successfully";
 
             return RedirectToAction("Index", "Category");
